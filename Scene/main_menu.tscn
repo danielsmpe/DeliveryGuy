@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://bylmp6545f0uj"]
+
+[ext_resource type="Texture2D" uid="uid://ccd31e1l54rnt" path="res://assets/bg.jpg" id="1_0pt3r"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_x65n3"]
+[ext_resource type="AudioStream" uid="uid://b7cu4s8laalei" path="res://assets/Audio/Sakura-Girl-Daisy-chosic.com_.mp3" id="3_rrs18"]
+
+[sub_resource type="SystemFont" id="SystemFont_h40w3"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_007x0"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_qcmfq"]
+font_names = PackedStringArray("Impact")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x65n3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 0.74902, 0.431373)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0pt3r")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("SystemFont_h40w3")
+theme_override_font_sizes/font_size = 75
+text = "Delivery Guy"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="score" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.584314, 0.643137, 0.0980392, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("SystemFont_007x0")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 40)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_qcmfq")
+theme_override_font_sizes/font_size = 24
+text = "Start Game"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(170, 40)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_qcmfq")
+theme_override_font_sizes/font_size = 24
+text = "Exit Game"
+
+[node name="bgmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rrs18")
+volume_db = -15.0
+autoplay = true

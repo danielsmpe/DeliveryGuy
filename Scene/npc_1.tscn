@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://mx1x363y5hi0"]
+
+[ext_resource type="Script" path="res://Scripts/recipient.gd" id="1_3fcsa"]
+[ext_resource type="Texture2D" uid="uid://bldmap1nvh6re" path="res://assets/Modern tiles_Free/Characters_free/Adam_idle_anim_16x16.png" id="1_k8oj0"]
+[ext_resource type="PackedScene" uid="uid://c71ylfrh6xuxf" path="res://Scene/recipient.tscn" id="2_ehe8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpx3o"]
+size = Vector2(47, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxnqt"]
+atlas = ExtResource("1_k8oj0")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6gc5"]
+atlas = ExtResource("1_k8oj0")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uslqu"]
+atlas = ExtResource("1_k8oj0")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foo16"]
+atlas = ExtResource("1_k8oj0")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3tcf"]
+atlas = ExtResource("1_k8oj0")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki4sv"]
+atlas = ExtResource("1_k8oj0")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_575wl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxnqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6gc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uslqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foo16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3tcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki4sv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="NPC1" type="CharacterBody2D"]
+script = ExtResource("1_3fcsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_hpx3o")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_575wl")
+autoplay = "default"
+frame = 5
+frame_progress = 0.333366
+
+[node name="pickrange" parent="Sprite2D" instance=ExtResource("2_ehe8b")]
