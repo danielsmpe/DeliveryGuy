@@ -25,7 +25,7 @@ DELIVERY GUY is optimized for keyboards.
 Ensure you have a stable keyboard and a sense of direction for successful deliveries.
 
 ## Installation :
-1. Clone the repository: git clone https://github.com/your_username/DELIVERY-GUY.git
+1. Clone the repository: git clone https://github.com/danielsmpe/DeliveryGuy.git
 2. Open the game directory.
 3. Launch the game by running the main executable file.
 4. Get ready for an immersive delivery experience. Good luck, DELIVERY GUY!
